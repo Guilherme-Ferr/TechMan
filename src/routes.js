@@ -12,14 +12,17 @@ const routes = express.Router();
 routes.post("/sessions", sessionController.store);
 routes.post("/users", userController.store);
 
-//rotas de perguntas
+//rotas de comentarios
 routes.get("/comments", commentController.index);
 routes.post("/comments", commentController.store);
 
 //rotas do feed
 routes.get("/feed", feedController.index);
 
-//rotas de categorias
+//rotas de perfis
+routes.get("/profiles", profilesController.index);
+
+//rotas de Equipamentos
 routes.get("/profiles", profilesController.index);
 
 module.exports = routes;

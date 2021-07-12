@@ -2,7 +2,6 @@ const { Op } = require("sequelize");
 const Comments = require("../models/Comments");
 const Equipaments = require("../models/Equipaments");
 const Profiles = require("../models/Profiles");
-const Users = require("../models/Users");
 
 module.exports = {
   async index(req, res) {
