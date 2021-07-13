@@ -2,27 +2,28 @@ const express = require("express");
 
 const userController = require("./controllers/users");
 const commentController = require("./controllers/comments");
-const feedController = require("./controllers/feed");
-const sessionController = require("./controllers/users");
-const profilesController = require("./controllers/profiles");
+const sessionController = require("./controllers/sessions");
+const profileController = require("./controllers/profiles");
+const equipammentController = require("./controllers/equipaments");
 
 const routes = express.Router();
 
 //rotas públicas
 routes.post("/sessions", sessionController.store);
+
+//rotas usuarios
 routes.post("/users", userController.store);
 
 //rotas de comentarios
 routes.get("/comments", commentController.index);
 routes.post("/comments", commentController.store);
 
-//rotas do feed
-routes.get("/feed", feedController.index);
-
 //rotas de perfis
-routes.get("/profiles", profilesController.index);
+routes.get("/profiles", profileController.index);
 
 //rotas de Equipamentos
-routes.get("/profiles", profilesController.index);
+routes.post("/equipaments", equipammentController.store);
+routes.get("/equipaments", equipammentController.index);
+routes.delete("/equipaments", equipammentController.delete);
 
 module.exports = routes;

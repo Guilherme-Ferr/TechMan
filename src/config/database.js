@@ -1,7 +1,5 @@
-require("dotenv").config();
-
 module.exports = {
-  url: process.env.DATABASE_URL,
+  url: "mysql://root:bcd127@localhost:3306/techman",
   config: {
     dialect: "mysql",
     define: {

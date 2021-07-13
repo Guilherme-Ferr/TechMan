@@ -2,25 +2,13 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    queryInterface.createTable("equipaments", {
+    queryInterface.createTable("profiles", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      equipament: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      image: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      description: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      activated: {
+      profile: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -34,7 +22,8 @@ module.exports = {
       },
     });
   },
+
   down: async (queryInterface, Sequelize) => {
-    queryInterface.dropTable("equipaments");
+    queryInterface.dropTable("profiles");
   },
 };

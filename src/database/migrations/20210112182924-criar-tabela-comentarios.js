@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    queryInterface.createTable("comment", {
+    queryInterface.createTable("comments", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -38,6 +38,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    queryInterface.dropTable("comment");
+    queryInterface.dropTable("comments");
   },
 };

@@ -8,7 +8,7 @@ module.exports = {
     try {
       const user = await User.findOne({
         where: {
-          profile,
+          password,
         },
       });
 
@@ -17,10 +17,10 @@ module.exports = {
 
       setTimeout(() => {
         res.status(201).send({
-          User: {
-            userId: user.profile,
+          user: {
+            userId: user.id,
+            userPassword: user.password,
           },
-          token,
         });
       }, 3000);
     } catch (error) {
